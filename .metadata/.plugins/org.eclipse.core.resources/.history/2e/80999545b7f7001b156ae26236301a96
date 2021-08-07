@@ -1,0 +1,16 @@
+programa
+
+  numero a, b;
+  texto  t1;
+
+  leia(a);
+  leia(b);
+  
+  a = 1 + 2 * 3;
+  
+  se ( a > b ) {
+     escreva (a);
+  }
+
+  
+fimprog;

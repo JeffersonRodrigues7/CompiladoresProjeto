@@ -1,0 +1,19 @@
+package br.com.IsiLanguage.main;
+
+import br.com.IsiLanguage.parser.IsiLangLexer;
+import br.com.IsiLanguage.parser.IsiLangParser;
+
+// Aqui vamos instanciar o parser e apontar para o arquivo fonte extensao.isi
+ 
+public class Main {
+
+	public static void main(String[] args) {
+		try {
+			 IsiLangLexer lexer;//analisador léxico
+			 IsiLangParser parser;
+		}catch(Exception e) {
+			 System.err.println("ERROR "+e.getMessage());
+		}
+	}
+
+}

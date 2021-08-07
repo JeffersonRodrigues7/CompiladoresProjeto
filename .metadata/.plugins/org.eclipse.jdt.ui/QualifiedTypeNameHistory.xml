@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="br.com.IsiLanguage.parser.IsiLangLexer"/>
+    <fullyQualifiedTypeName name="br.com.IsiLanguage.parser.IsiLangParser"/>
+    <fullyQualifiedTypeName name="org.antlr.v4.runtime.CharStreams"/>
+    <fullyQualifiedTypeName name="org.antlr.runtime.CommonTokenStream"/>
+    <fullyQualifiedTypeName name="org.antlr.v4.runtime.CommonTokenStream"/>
+    <fullyQualifiedTypeName name="br.com.IsiLanguage.exceptions.IsiSemanticException"/>
+</qualifiedTypeNameHistroy>

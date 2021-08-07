@@ -1,0 +1,24 @@
+programa
+
+  numero a, b, c;
+  texto  t1;
+
+  leia(a);
+  leia(b);
+  c = 0;
+  
+  a = 1 + 2 * 3 / b;
+  
+  se ( a > b ) {
+     escreva (a);
+  }
+  senao {
+     escreva (b);
+  }
+  
+  enquanto ( c < 10 ) {
+       escreva (c);
+       c = c + 1;
+  }
+  
+fimprog;
