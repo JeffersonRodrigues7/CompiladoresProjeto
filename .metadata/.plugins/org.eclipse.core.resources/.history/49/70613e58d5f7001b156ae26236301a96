@@ -269,7 +269,7 @@ cmdrepeticaoEnquanto	: 'enquanto' AP
                    			 }
                  ;
                  
-cmdrepeticaoFazer :  'fazer' 
+cmdrepeticaoFazer :  'Fazer' 
 							 ACH
 							 { curThread = new ArrayList<AbstractCommand>(); 
 		                       stack.push(curThread);

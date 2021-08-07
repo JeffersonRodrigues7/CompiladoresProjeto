@@ -23,6 +23,7 @@ programa
   }
   
   fazer {
+       
        c = c + 1;
        escreva (c);
   }enquanto (c<20)

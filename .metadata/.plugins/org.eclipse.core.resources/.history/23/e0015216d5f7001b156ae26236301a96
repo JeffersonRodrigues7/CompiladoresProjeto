@@ -269,13 +269,17 @@ cmdrepeticaoEnquanto	: 'enquanto' AP
                    			 }
                  ;
                  
-cmdrepeticaoFazer :  'fazer' 
+cmdrepeticaoFazer :  'Fazer' 
 							 ACH
 							 { curThread = new ArrayList<AbstractCommand>(); 
 		                       stack.push(curThread);
 		                     }
 		                     (cmd)+ 
-							 FCH
+							 FCH{
+							     listaDo = stack.pop();
+		                   		 CommandRepeticaoFazer cmd = new CommandRepeticaoFazer(_exprDo, listaDo);
+		                   		 stack.peek().add(cmd);
+                   			 }
                    	 'enquanto'
                    			 AP
                    			 ID {  content =  _input.LT(-1).getText();
@@ -292,11 +296,6 @@ cmdrepeticaoFazer :  'fazer'
 		                    	  		    	variable.setUsed();//Aqui estamos falando que a variavel foi utilizada
 										     } 
 		               		 }
-		               		 FP{
-							     listaDo = stack.pop();
-		                   		 CommandRepeticaoFazer cmd = new CommandRepeticaoFazer(_exprDo, listaDo);
-		                   		 stack.peek().add(cmd);
-                   			 }
                  ;
 	
 expr		:  termo ( 

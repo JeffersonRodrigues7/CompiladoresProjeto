@@ -23,8 +23,8 @@ programa
   }
   
   fazer {
-       c = c + 1;
        escreva (c);
+       c = c + 1;
   }enquanto (c<20)
   
   escreva (t1);

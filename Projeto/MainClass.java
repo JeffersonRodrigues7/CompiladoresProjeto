@@ -21,5 +21,10 @@ while (c<10) {
 System.out.println(c);
 c = c+1;
 }
+do {
+System.out.println(c);
+c = c+1;
+}(c<20);
+
 System.out.println(t1);
   }}

@@ -12,6 +12,7 @@ package br.com.IsiLanguage.parser;
 	import br.com.IsiLanguage.ast.CommandAtribuicao;
 	import br.com.IsiLanguage.ast.CommandDecisao;
 	import br.com.IsiLanguage.ast.CommandRepeticaoEnquanto;
+	import br.com.IsiLanguage.ast.CommandRepeticaoFazer;
 	import java.util.ArrayList;
 	import java.util.Stack;
 
@@ -123,15 +124,25 @@ public interface IsiLangListener extends ParseTreeListener {
 	 */
 	void exitCmdselecao(IsiLangParser.CmdselecaoContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link IsiLangParser#cmdrepeticao}.
+	 * Enter a parse tree produced by {@link IsiLangParser#cmdrepeticaoEnquanto}.
 	 * @param ctx the parse tree
 	 */
-	void enterCmdrepeticao(IsiLangParser.CmdrepeticaoContext ctx);
+	void enterCmdrepeticaoEnquanto(IsiLangParser.CmdrepeticaoEnquantoContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link IsiLangParser#cmdrepeticao}.
+	 * Exit a parse tree produced by {@link IsiLangParser#cmdrepeticaoEnquanto}.
 	 * @param ctx the parse tree
 	 */
-	void exitCmdrepeticao(IsiLangParser.CmdrepeticaoContext ctx);
+	void exitCmdrepeticaoEnquanto(IsiLangParser.CmdrepeticaoEnquantoContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link IsiLangParser#cmdrepeticaoFazer}.
+	 * @param ctx the parse tree
+	 */
+	void enterCmdrepeticaoFazer(IsiLangParser.CmdrepeticaoFazerContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link IsiLangParser#cmdrepeticaoFazer}.
+	 * @param ctx the parse tree
+	 */
+	void exitCmdrepeticaoFazer(IsiLangParser.CmdrepeticaoFazerContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link IsiLangParser#expr}.
 	 * @param ctx the parse tree

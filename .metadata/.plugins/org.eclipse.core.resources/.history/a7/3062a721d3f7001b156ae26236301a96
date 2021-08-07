@@ -12,7 +12,6 @@ grammar IsiLang;
 	import br.com.IsiLanguage.ast.CommandAtribuicao;
 	import br.com.IsiLanguage.ast.CommandDecisao;
 	import br.com.IsiLanguage.ast.CommandRepeticaoEnquanto;
-	import br.com.IsiLanguage.ast.CommandRepeticaoFazer;
 	import java.util.ArrayList;
 	import java.util.Stack;
 }
@@ -32,13 +31,11 @@ grammar IsiLang;
 	private String _exprContent;
 	private String _exprDecision;
 	private String _exprWhile;
-	private String _exprDo;
 	private String content;//vai pegar o conteudo de uma atribuicao
 	private int type;//vai armazenar o tipo de conteudo de uma atribuicao
 	private ArrayList<AbstractCommand> listaTrue;
 	private ArrayList<AbstractCommand> listaFalse;
 	private ArrayList<AbstractCommand> listaWhile;
-	private ArrayList<AbstractCommand> listaDo;
 	private ArrayList<Integer> types = new ArrayList<Integer>();//Variável que vai armazenar os tipos em uma linha de atribuição
 	
 	public void verificaID(String id){
@@ -139,7 +136,6 @@ cmd		:  cmdleitura
  		|  cmdattrib
  		|  cmdselecao  
  		|  cmdrepeticaoEnquanto
- 		|  cmdrepeticaoFazer
 		;
 		
 cmdleitura	: 'leia' AP
@@ -265,36 +261,6 @@ cmdrepeticaoEnquanto	: 'enquanto' AP
 							 FCH{
 							     listaWhile = stack.pop();
 		                   		 CommandRepeticaoEnquanto cmd = new CommandRepeticaoEnquanto(_exprWhile, listaWhile);
-		                   		 stack.peek().add(cmd);
-                   			 }
-                 ;
-                 
-cmdrepeticaoFazer :  'fazer' 
-							 ACH
-							 { curThread = new ArrayList<AbstractCommand>(); 
-		                       stack.push(curThread);
-		                     }
-		                     (cmd)+ 
-							 FCH
-                   	 'enquanto'
-                   			 AP
-                   			 ID {  content =  _input.LT(-1).getText();
-							 	   _exprDo = content;
-									
-		                    	   IsiVariable variable = (IsiVariable)getSymbol(content);//Pegando variavel
-		                    	   variable.setUsed();//Aqui estamos falando que a variavel foi utilizada  
-		                    	}
-							 OPREL { _exprDo += _input.LT(-1).getText(); }
-							 (ID | NUMBER) { content = _input.LT(-1).getText();
-		                   				  	 _exprDo += content;
-		                    	   		     if (symbolTable.exists(content)){//Caso tenhamos um ID vamos dizer que ele já foi usado
-												variable = (IsiVariable)getSymbol(content);//Pegando variavel
-		                    	  		    	variable.setUsed();//Aqui estamos falando que a variavel foi utilizada
-										     } 
-		               		 }
-		               		 FP{
-							     listaDo = stack.pop();
-		                   		 CommandRepeticaoFazer cmd = new CommandRepeticaoFazer(_exprDo, listaDo);
 		                   		 stack.peek().add(cmd);
                    			 }
                  ;
