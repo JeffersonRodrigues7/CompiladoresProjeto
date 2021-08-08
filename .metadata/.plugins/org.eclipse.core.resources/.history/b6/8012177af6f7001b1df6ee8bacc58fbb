@@ -213,6 +213,7 @@ cmdselecao  :  'se' AP
                     }
                     OPREL { _exprDecision += _input.LT(-1).getText(); }
                     (ID | NUMBER) { content = _input.LT(-1).getText();
+                    				verificaID(content)
                     	   		    _exprDecision += content;  
                     	   		   
                     	   		    if (symbolTable.exists(content)){//Caso tenhamos um ID vamos dizer que ele já foi usado
@@ -249,7 +250,7 @@ cmdselecao  :  'se' AP
 
 cmdrepeticaoEnquanto	: 'enquanto' AP
 							 ID {  content =  _input.LT(-1).getText();
-							 		verificaID(content);
+							 		verificaID(content)
 							 	   _exprWhile = content;
 									
 		                    	   IsiVariable variable = (IsiVariable)getSymbol(content);//Pegando variavel
@@ -286,7 +287,6 @@ cmdrepeticaoFazer :  'fazer'
                    	 'enquanto'
                    			 AP
                    			 ID {  content =  _input.LT(-1).getText();
-                   			 		verificaID(content);
 							 	   _exprDo = content;
 									
 		                    	   IsiVariable variable = (IsiVariable)getSymbol(content);//Pegando variavel

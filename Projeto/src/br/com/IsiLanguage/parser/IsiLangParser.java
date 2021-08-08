@@ -141,7 +141,7 @@ public class IsiLangParser extends Parser {
 			return symbolTable.get(id);
 		}
 		
-		public int isNumeric(String str) {//Retorna 0 se for inteiro ou 1 se não for inteiro
+		public int isNumeric(String str) {//Retorna 0 se for numero ou 1 se não for numero
 			try {  
 			    Double.parseDouble(str);  
 			    return 0;
@@ -150,7 +150,7 @@ public class IsiLangParser extends Parser {
 			}  
 		}
 		
-		public void verifyTypes(){//Essa funcao verifica se dentro da arraylist todos os tipos sao iguais
+		public void verifyTypes(){//Essa funcao verifica se dentro da arraylist todos os tipos sao iguais, utilizada para fazer verificar se a atribuicao esta correta
 			for(int i = 0; i < types.size()-1; i++)//Vou percorrer a lista para verificar se há alguma incompatibilidade de tipos
 			{
 			    if(types.get(i)!=types.get(i+1)){
@@ -985,6 +985,7 @@ public class IsiLangParser extends Parser {
 			setState(134);
 			match(ID);
 			  content =  _input.LT(-1).getText();
+										 		verificaID(content);
 										 	   _exprWhile = content;
 												
 					                    	   IsiVariable variable = (IsiVariable)getSymbol(content);//Pegando variavel
@@ -1120,6 +1121,7 @@ public class IsiLangParser extends Parser {
 			setState(162);
 			match(ID);
 			  content =  _input.LT(-1).getText();
+			                   			 		verificaID(content);
 										 	   _exprDo = content;
 												
 					                    	   IsiVariable variable = (IsiVariable)getSymbol(content);//Pegando variavel

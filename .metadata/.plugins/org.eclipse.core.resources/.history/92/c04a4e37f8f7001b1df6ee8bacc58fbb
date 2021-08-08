@@ -1,0 +1,37 @@
+programa
+
+  numero a, b, c, d, e;
+  texto  t1, t2;
+  boolean k;
+
+  leia(a);
+  leia(b);//Comentario de teste
+  c = 0.0;
+  t1 = "teste1";
+  
+  a = 1 + 2 * 3 / b;
+  
+  se ( a > b ) {
+     escreva (a);
+  }
+  senao {
+     escreva (b);
+  }
+  
+  enquanto ( c < 15 ) {
+       escreva (c);
+       c = c + 1;
+  }
+  
+  fazer {
+ 	   escreva (c);
+       c = c + 1.0;
+  }enquanto (c<20);
+  
+  para (d = 0 ; d<10; d = d + 2){
+  	   escreva (d);
+  }
+  
+  escreva (t1);
+  
+fimprog;

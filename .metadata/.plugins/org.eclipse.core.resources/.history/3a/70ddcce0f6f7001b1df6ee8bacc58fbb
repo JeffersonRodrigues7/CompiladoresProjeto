@@ -249,7 +249,7 @@ cmdselecao  :  'se' AP
 
 cmdrepeticaoEnquanto	: 'enquanto' AP
 							 ID {  content =  _input.LT(-1).getText();
-							 		verificaID(content);
+							 		verificaID(content)
 							 	   _exprWhile = content;
 									
 		                    	   IsiVariable variable = (IsiVariable)getSymbol(content);//Pegando variavel
@@ -286,7 +286,7 @@ cmdrepeticaoFazer :  'fazer'
                    	 'enquanto'
                    			 AP
                    			 ID {  content =  _input.LT(-1).getText();
-                   			 		verificaID(content);
+                   			 		verificaID(content)
 							 	   _exprDo = content;
 									
 		                    	   IsiVariable variable = (IsiVariable)getSymbol(content);//Pegando variavel
@@ -313,6 +313,7 @@ cmdrepeticaoPara	 :'para'
 					    
 					  ID { verificaID(_input.LT(-1).getText());
 		                    _exprID = _input.LT(-1).getText();
+		                    verificaID(_exprID);
 		                    
 		                    IsiVariable variable = (IsiVariable)getSymbol(_exprID);//Pegando variavel
 		                    variable.setUsed();//Aqui estamos falando que a variavel foi utilizada
