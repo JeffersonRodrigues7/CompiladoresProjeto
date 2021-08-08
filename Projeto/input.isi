@@ -1,11 +1,12 @@
 programa
 
-  numero a, b, c, d;
+  numero a, b, c, d, e;
   texto  t1, t2;
+  boolean k;
 
   leia(a);
-  leia(b);
-  c = 0;
+  leia(b);//Comentario de teste
+  c = 0.0;
   t1 = "teste1";
   
   a = 1 + 2 * 3 / b;
@@ -23,9 +24,13 @@ programa
   }
   
   fazer {
-       c = c + 1;
-       escreva (c);
-  }enquanto (c<20)
+ 	   escreva (c);
+       c = c + 1.0;
+  }enquanto (c<20);
+  
+  para (d = 0 ; d<10; d = d + 2){
+  	   escreva (d);
+  }
   
   escreva (t1);
   

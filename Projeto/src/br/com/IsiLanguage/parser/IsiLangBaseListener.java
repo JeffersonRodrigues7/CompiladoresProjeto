@@ -13,6 +13,7 @@ package br.com.IsiLanguage.parser;
 	import br.com.IsiLanguage.ast.CommandDecisao;
 	import br.com.IsiLanguage.ast.CommandRepeticaoEnquanto;
 	import br.com.IsiLanguage.ast.CommandRepeticaoFazer;
+	import br.com.IsiLanguage.ast.CommandRepeticaoPara;
 	import java.util.ArrayList;
 	import java.util.Stack;
 
@@ -171,6 +172,18 @@ public class IsiLangBaseListener implements IsiLangListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitCmdrepeticaoFazer(IsiLangParser.CmdrepeticaoFazerContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterCmdrepeticaoPara(IsiLangParser.CmdrepeticaoParaContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitCmdrepeticaoPara(IsiLangParser.CmdrepeticaoParaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

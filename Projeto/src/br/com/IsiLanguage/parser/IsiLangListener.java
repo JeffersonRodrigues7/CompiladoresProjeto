@@ -13,6 +13,7 @@ package br.com.IsiLanguage.parser;
 	import br.com.IsiLanguage.ast.CommandDecisao;
 	import br.com.IsiLanguage.ast.CommandRepeticaoEnquanto;
 	import br.com.IsiLanguage.ast.CommandRepeticaoFazer;
+	import br.com.IsiLanguage.ast.CommandRepeticaoPara;
 	import java.util.ArrayList;
 	import java.util.Stack;
 
@@ -143,6 +144,16 @@ public interface IsiLangListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitCmdrepeticaoFazer(IsiLangParser.CmdrepeticaoFazerContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link IsiLangParser#cmdrepeticaoPara}.
+	 * @param ctx the parse tree
+	 */
+	void enterCmdrepeticaoPara(IsiLangParser.CmdrepeticaoParaContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link IsiLangParser#cmdrepeticaoPara}.
+	 * @param ctx the parse tree
+	 */
+	void exitCmdrepeticaoPara(IsiLangParser.CmdrepeticaoParaContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link IsiLangParser#expr}.
 	 * @param ctx the parse tree

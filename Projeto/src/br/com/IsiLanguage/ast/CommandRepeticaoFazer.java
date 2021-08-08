@@ -19,13 +19,13 @@ public class CommandRepeticaoFazer extends AbstractCommand {
 		for (AbstractCommand cmd: listaDo) {
 			str.append(cmd.generateJavaCode()+"\n");
 		}
-		str.append("}("+condition+");\n");
+		str.append("}while("+condition+");\n");
 		return str.toString();
 	}
 	
 	@Override
 	public String toString() {
-		return "CommandRepeticaoEnquanto [condition=" + condition + ", listaDo=[" + listaDo + "]";
+		return "CommandRepeticaoFazer [condition=" + condition + ", listaDo=[" + listaDo + "]";
 	}
 	
 	

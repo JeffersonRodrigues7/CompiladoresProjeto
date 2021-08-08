@@ -1,0 +1,35 @@
+programa
+
+  numero a, b, c, d;
+  texto  t1, t2;
+  boolean k;
+
+  leia(a);
+  leia(b);
+  c = 1.0;
+  t1 = "teste1";
+  
+  a = 1 + 2 * 3 / b;
+  
+  se ( a > b ) {
+     escreva (a);
+  }
+  senao {
+     escreva (b);
+  }
+  
+  enquanto ( c < 10 ) {
+       escreva (c);
+       c = c + 1;
+  }
+  
+  fazer {
+       c = c + 1.0;
+       escreva (c);
+  }enquanto (c<20)
+  
+  para (c ; c<30; c = c + 1)
+  
+  escreva (t1);
+  
+fimprog;
